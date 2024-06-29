@@ -184,11 +184,62 @@ void pattern8(int n)
     }
 
     // Output
-    
+
     // *******
     //  *****
     //   ***
     //    *
+}
+
+// Pattern 9
+
+void pattern9(int n) 
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j <= n; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 2; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    for(int i = 2; i <= n; i++)
+    {
+        for(int j = 1; j <= i ; j++)
+        {
+            cout<<" ";
+        }
+        for(int j =i; j <= n; j++)
+        {
+            cout << "*";
+        }
+        for(int j = i + 1; j <= n; j++)
+        {
+            cout << "*";
+        }
+        
+        cout << endl;
+    }
+
+    // Output
+    
+    //    *
+    //   ***
+    //  *****
+    // *******
+    //  *****
+    //   ***
+    //    *
+
 }
 
 int main()
@@ -197,7 +248,7 @@ int main()
     // cout << "Enter value of N : ";
     // cin >> n;
     n = 4;
-    pattern8(n);
+    pattern9(n);
 
     return 0;
 }
