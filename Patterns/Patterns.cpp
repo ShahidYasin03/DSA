@@ -154,20 +154,50 @@ void pattern7(int n)
     }
 
     // Output
-    
+
     //    *   
     //   ***  
     //  ***** 
     // *******
 }
 
+// Pattern 8
+
+void pattern8(int n)
+{
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= i ; j++)
+        {
+            cout<<" ";
+        }
+        for(int j =i; j <= n; j++)
+        {
+            cout << "*";
+        }
+        for(int j = i + 1; j <= n; j++)
+        {
+            cout << "*";
+        }
+        
+        cout << endl;
+    }
+
+    // Output
+    
+    // *******
+    //  *****
+    //   ***
+    //    *
+}
+
 int main()
 {
     int n;
-    cout << "Enter value of N : ";
-    cin >> n;
-
-    pattern7(n);
+    // cout << "Enter value of N : ";
+    // cin >> n;
+    n = 4;
+    pattern8(n);
 
     return 0;
 }
