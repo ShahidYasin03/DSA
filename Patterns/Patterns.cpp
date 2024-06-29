@@ -1,0 +1,134 @@
+// Patterns Practice
+
+#include <iostream>
+using namespace std;
+
+// Pattern 1
+
+void pattern1(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << "*";
+        }
+        // Put next line after each row
+        cout << endl;
+    }
+
+    // Output
+
+    // ****
+    // ****
+    // ****
+    // ****
+}
+
+void pattern2(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // *
+    // **
+    // ***
+    // ****
+}
+
+void pattern3(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j <= n; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // ****
+    // ***
+    // **
+    // *
+}
+
+void pattern4(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            cout << j + 1;
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // 1
+    // 12
+    // 123
+    // 1234
+}
+
+void pattern5(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << i;
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // 1
+    // 22
+    // 333
+    // 4444
+}
+
+void pattern6(int n)
+{
+    int count = 1;
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << count++;
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // 1
+    // 23
+    // 456
+    // 78910
+}
+
+int main()
+{
+    int n;
+    cout << "Enter value of N : ";
+    cin >> n;
+
+    pattern6(n);
+
+    return 0;
+}
