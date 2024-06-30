@@ -155,9 +155,9 @@ void pattern7(int n)
 
     // Output
 
-    //    *   
-    //   ***  
-    //  ***** 
+    //    *
+    //   ***
+    //  *****
     // *******
 }
 
@@ -165,21 +165,21 @@ void pattern7(int n)
 
 void pattern8(int n)
 {
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        for(int j = 1; j <= i ; j++)
+        for (int j = 1; j <= i; j++)
         {
-            cout<<" ";
+            cout << " ";
         }
-        for(int j =i; j <= n; j++)
-        {
-            cout << "*";
-        }
-        for(int j = i + 1; j <= n; j++)
+        for (int j = i; j <= n; j++)
         {
             cout << "*";
         }
-        
+        for (int j = i + 1; j <= n; j++)
+        {
+            cout << "*";
+        }
+
         cout << endl;
     }
 
@@ -193,7 +193,7 @@ void pattern8(int n)
 
 // Pattern 9
 
-void pattern9(int n) 
+void pattern9(int n)
 {
     for (int i = 1; i <= n; i++)
     {
@@ -212,26 +212,26 @@ void pattern9(int n)
         cout << endl;
     }
 
-    for(int i = 2; i <= n; i++)
+    for (int i = 2; i <= n; i++)
     {
-        for(int j = 1; j <= i ; j++)
+        for (int j = 1; j <= i; j++)
         {
-            cout<<" ";
+            cout << " ";
         }
-        for(int j =i; j <= n; j++)
-        {
-            cout << "*";
-        }
-        for(int j = i + 1; j <= n; j++)
+        for (int j = i; j <= n; j++)
         {
             cout << "*";
         }
-        
+        for (int j = i + 1; j <= n; j++)
+        {
+            cout << "*";
+        }
+
         cout << endl;
     }
 
     // Output
-    
+
     //    *
     //   ***
     //  *****
@@ -239,7 +239,63 @@ void pattern9(int n)
     //  *****
     //   ***
     //    *
+}
 
+// Pattern 10
+
+void pattern10(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // *
+    // **
+    // ***
+    // ****
+    // ***
+    // **
+    // *
+}
+
+// Pattern 11
+
+void pattern11(int n)
+{
+    bool flag = true;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            if (flag)
+            {
+            cout << "1";
+                flag = false;
+            }
+            else
+            {
+                cout << "0";
+                flag = true;
+            }
+        }
+        cout << endl;
+    }
 }
 
 int main()
@@ -247,8 +303,8 @@ int main()
     int n;
     // cout << "Enter value of N : ";
     // cin >> n;
-    n = 4;
-    pattern9(n);
+    n = 5;
+    pattern11(n);
 
     return 0;
 }
