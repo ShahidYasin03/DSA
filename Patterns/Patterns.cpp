@@ -340,13 +340,34 @@ void pattern12(int n)
     // 1234554321
 }
 
+// Pattern 13
+
+void pattern13(int n)
+{
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            cout << char(65 + j - 1);
+        }
+        cout << endl;
+    }
+
+    // Output
+
+    // A
+    // AB
+    // ABC
+    // ABCD
+    // ABCDE
+}
 int main()
 {
     int n;
     cout << "Enter value of N : ";
     cin >> n;
 
-    pattern12(n);
+    pattern13(5);
 
     return 0;
 }
