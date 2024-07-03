@@ -361,6 +361,10 @@ void pattern13(int n)
     // ABCD
     // ABCDE
 }
+
+
+
+//
 int main()
 {
     int n;
