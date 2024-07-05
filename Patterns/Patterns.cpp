@@ -362,6 +362,28 @@ void pattern13(int n)
     // ABCDE
 }
 
+// Pattern 14
+
+void pattern14(int n)
+{
+    char c = 'A';
+    for(int i = 1; i<= n; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            cout <<c;
+        }
+        c++;
+        cout <<endl;
+    }
+
+    // Output 
+    // A
+    // BB
+    // CCC
+    // DDDD
+}
+
 
 
 //
@@ -371,7 +393,7 @@ int main()
     cout << "Enter value of N : ";
     cin >> n;
 
-    pattern13(5);
+    pattern14(n);
 
     return 0;
 }
