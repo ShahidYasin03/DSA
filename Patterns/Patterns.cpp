@@ -378,12 +378,66 @@ void pattern14(int n)
     }
 
     // Output 
+
     // A
     // BB
     // CCC
     // DDDD
 }
 
+// Patern 15
+
+void pattern15(int n)
+{
+    for(int i = 1; i<= n; i++)
+    {
+        for(int j = 1; j<= n; j++)
+        {
+            if(i == 1 || j == 1 || i == n || j == n)
+            {
+                cout << " * ";
+            }else{
+                cout << "   ";
+            }
+        }
+            cout <<endl;
+    }
+
+    // Output
+//  *  *  *  *  * 
+//  *           *
+//  *           *
+//  *           *
+//  *  *  *  *  *
+}
+
+// Pattern 16
+
+void pattern16(int n)
+{
+    char c = 'A';
+    for(int i = 1; i<= n; i++)
+    {
+        for(int j = 1; j<= n; j++)
+        {
+            if(i == 1 || j == 1 || i == n || j == n)
+            {
+                cout << " "<< c++ <<" ";
+            }else{
+                cout << "   ";
+            }
+        }
+            cout <<endl;
+    }
+
+    // Output
+    
+    //  A  B  C  D  E 
+    //  F           G
+    //  H           I
+    //  J           K
+    //  L  M  N  O  P
+}
 
 
 //
@@ -393,7 +447,7 @@ int main()
     cout << "Enter value of N : ";
     cin >> n;
 
-    pattern14(n);
+    pattern16(n);
 
     return 0;
 }
