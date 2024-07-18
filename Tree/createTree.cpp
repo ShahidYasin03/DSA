@@ -53,19 +53,20 @@ void levelOrder(node *root)
             {
                 q.push(NULL);
             }
-        }else{
-        cout << temp->data << "   ";
-
-        if (temp->left)
-        {
-            q.push(temp->left);
         }
-
-        if (temp->right)
+        else
         {
-            q.push(temp->right);
-        }
+            cout << temp->data << "   ";
 
+            if (temp->left)
+            {
+                q.push(temp->left);
+            }
+
+            if (temp->right)
+            {
+                q.push(temp->right);
+            }
         }
     }
 }
