@@ -5,16 +5,15 @@ using namespace std;
 class Solution
 {
 public:
-    int countSeniors(vector<string> &details)
+    int countSeniors(std::vector<std::string> &details)
     {
         int n = details.size();
         int count = 0;
         for (int i = 0; i < n; i++)
         {
-            string str = "";
-            str += details[i][11];
-            str += details[i][12];
-            if (str > "60")
+            // Extract the age substring and convert it to an integer
+            int age = std::stoi(details[i].substr(11, 2));
+            if (age > 60)
             {
                 count++;
             }
