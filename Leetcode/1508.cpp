@@ -27,17 +27,16 @@ public:
         {
             sum += arr[i];
         }
-        // for (int i = 0; i < arr.size(); i++)
-        // {
-        //     cout << arr[i] << ",  ";
-        // }
-        // cout << endl;
         return sum %  1000000007;
     }
 };
 
-// Expected output: 1, 3, 6, 10, 2, 5, 9, 3, 7, 4.
-// Expected output: 1,  2,  3,  3,  4,  5,  6,  7,  9,  10,
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
 
 int main()
 {
