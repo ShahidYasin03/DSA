@@ -1,144 +1,64 @@
-// #include <iostream>
-// #include <vector>
-// #include <algorithm>
-
-// using namespace std;
-
-// class Solution
-// {
-// public:
-//     int minimumPushes(string word)
-//     {
-//         int n = word.size();
-//         if (n <= 8)
-//         {
-//             return n;
-//         }
-//         vector<int> count(26, 0);
-//         for (int i = 0; i < n; i++)
-//         {
-//             // char - 97 = int
-//             count[word[i] - 97]++;
-//         }
-//         sort(count.begin(), count.end(), greater<int>());
-
-//         int keys = 0;
-//         for (int i = 0; i < count.size(); i++)
-//         {
-//             if (count[i] == 0)
-//             {
-//                 break;
-//             }
-//             else if (count[i] != 0 && i < 9)
-//             {
-//                 keys += count[i] * 1;
-//             }
-//             else if (count[i] != 0 && i < 16)
-//             {
-//                 keys += count[i] * 2;
-//             }
-//             else if (count[i] != 0 && i < 24)
-//             {
-//                 keys += count[i] * 3;
-//             }
-//             else
-//             {
-//                 keys += count[i] * 4;
-//             }
-//         }
-//         return keys;
-//     }
-// };
-
-// int main()
-// {
-//     string word = "aabbccddeeffgghhiiiiii";
-//     // expected output 24
-//     Solution sol;
-//     int keys = sol.minimumPushes(word);
-//     cout << "Keys: " << keys << endl;
-
-//     return 0;
-// }
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int minimumPushes(string word)
-    {
+    int minimumPushes(string word) {
         int n = word.size();
-        if (n <= 8)
-        {
+        if (n <= 8) {
             return n;
         }
 
         vector<int> count(26, 0);
-        for (char c : word)
-        {
+        for (char c : word) {
             count[c - 'a']++;
         }
 
-        // Debug: Print the frequency of each character before sorting
-        // cout << "Frequency before sorting: ";
-        // for (int i = 0; i < 26; ++i) {
-        //     if (count[i] != 0) {
-        //         cout << char('a' + i) << ": " << count[i] << " ";
-        //     }
-        // }
-        // cout << endl;
-
         sort(count.begin(), count.end(), greater<int>());
 
-        // Debug: Print the sorted frequency
-        // cout << "Sorted frequency: ";
-        // for (int i = 0; i < 26; ++i) {
-        //     if (count[i] != 0) {
-        //         cout << count[i] << " ";
-        //     }
-        // }
-        // cout << endl;
-
         int keys = 0;
-        for (int i = 0; i < count.size() && count[i] != 0; i++)
-        {
-            if (i < 8)
-            {
+        for (int i = 0; i < count.size() && count[i] != 0; i++) {
+            if (i < 8) {
                 keys += count[i];
-            }
-            else if (i < 16)
-            {
+            } else if (i < 15) {
                 keys += count[i] * 2;
-            }
-            else if (i < 24)
-            {
+            } else if (i < 23) {
                 keys += count[i] * 3;
-            }
-            else
-            {
+            } else {
                 keys += count[i] * 4;
             }
         }
-
-        // Debug: Print total key presses
-        // cout << "Total key presses: " << keys << endl;
 
         return keys;
     }
 };
 
-int main()
-{
-    string word = "aabbccddeeffgghhiiiiii";
-    // expected output 24
+void runTestCases() {
     Solution sol;
-    int keys = sol.minimumPushes(word);
-    cout << "Keys: " << keys << endl;
 
+    vector<string> testCases = {
+        "aabbccddeeffgghhiiiiii", // expected output 24
+        "abc",                    // expected output 3
+        "abcdefgh",               // expected output 8
+        "abcdefghij",             // expected output 11
+        "aaaabbbbccccdddd",       // expected output 16
+        "abcabcabcabcabcabcabc",  // expected output 26
+        "zzzzzzzzzzzzzzzzzzzzzzzz", // expected output 47
+        "aabbccddeeffgghhiijjkkllmmnnooppqq", // expected output 54
+        "abcdefghijklmnopqrstuvwxyz", // expected output 53
+        "aabbccddeeffgghhiijjkkllmmnnooppqqrrsstt", // expected output 60
+    };
+
+    for (const string& testCase : testCases) {
+        int keys = sol.minimumPushes(testCase);
+        cout << "Word: " << testCase << ", Keys: " << keys << endl;
+    }
+}
+
+int main() {
+    runTestCases();
     return 0;
 }
