@@ -23,9 +23,9 @@ public:
         for (int i = 0; i < count.size() && count[i] != 0; i++) {
             if (i < 8) {
                 keys += count[i];
-            } else if (i < 15) {
+            } else if (i < 16) {
                 keys += count[i] * 2;
-            } else if (i < 23) {
+            } else if (i < 24) {
                 keys += count[i] * 3;
             } else {
                 keys += count[i] * 4;
@@ -36,29 +36,12 @@ public:
     }
 };
 
-void runTestCases() {
-    Solution sol;
-
-    vector<string> testCases = {
-        "aabbccddeeffgghhiiiiii", // expected output 24
-        "abc",                    // expected output 3
-        "abcdefgh",               // expected output 8
-        "abcdefghij",             // expected output 11
-        "aaaabbbbccccdddd",       // expected output 16
-        "abcabcabcabcabcabcabc",  // expected output 26
-        "zzzzzzzzzzzzzzzzzzzzzzzz", // expected output 47
-        "aabbccddeeffgghhiijjkkllmmnnooppqq", // expected output 54
-        "abcdefghijklmnopqrstuvwxyz", // expected output 53
-        "aabbccddeeffgghhiijjkkllmmnnooppqqrrsstt", // expected output 60
-    };
-
-    for (const string& testCase : testCases) {
-        int keys = sol.minimumPushes(testCase);
-        cout << "Word: " << testCase << ", Keys: " << keys << endl;
-    }
-}
 
 int main() {
-    runTestCases();
+    Solution sol;
+    string word =  "hiknogatpyjzcdbe"; // expected output 24
+    int keys = sol.minimumPushes(word);
+    cout << "Keys: " << keys <<endl;
+   
     return 0;
 }
