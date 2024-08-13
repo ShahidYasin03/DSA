@@ -16,4 +16,5 @@ I don't know what to write in this Readme file so i am using it as journal to ta
                     Today I am starting Binary Trees, I have little bit idea about it, but never impelemented or used.
 
 (Tuesday, 8/13/24):
+                    I am a failure afterall, I stopped coding, because I didn't had internet also I could continue the Binary Trees I don't know why!!(Tuesday, 8/13/24):
                     I am a failure afterall, I stopped coding, because I didn't had internet also I could continue the Binary Trees I don't know why!!
