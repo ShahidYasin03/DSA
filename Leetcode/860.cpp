@@ -13,7 +13,7 @@ class Solution
 public:
     bool lemonadeChange(vector<int> &bills)
     {
-        int five = 0, ten = 0, twen = 0;
+        int five = 0, ten = 0;
 
         for (int i = 0; i < bills.size(); i++)
         {
@@ -24,7 +24,7 @@ public:
             else if (bills[i] == 10)
             {
                 ten++;
-                if (five)
+                if (five > 0)
                 {
                     five--;
                 }
@@ -35,7 +35,6 @@ public:
             }
             else
             {
-                twen++;
                 if (ten && five)
                 {
                     ten--;
