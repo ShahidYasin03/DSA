@@ -1,20 +1,19 @@
 #include <iostream>
-#include <cctype>
 using namespace std;
 
 class Solution {
 public:
     int countKeyChanges(string s) {
-        int count = 0;
-        int n = s.length();
-        for(int i = 0; i < n - 1; i++)
-        {
-            if(tolower(s[i]) != tolower(s[i+1]))
-            {
-                count++;
+        int ans = 0;
+        for(int i = 0; i< s.length()-1 ; i++){
+            if(abs(s[i] - s[i+1]) == 32 || abs(s[i] - s[i+1]) == 0){
+                continue;
+            }
+            else{
+                ans++;
             }
         }
-        return count;
+        return ans;
     }
 };
 
