@@ -1,31 +1,40 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class Solution {
+class Solution
+{
 public:
-    int minMaxGame(vector<int>& nums) 
+    int minMaxGame(vector<int> &nums)
     {
-        if(nums.size()==1) return nums[0];
-        int n;
-        bool flag = true;
-        while(nums.size() > 2)
+
+        while (nums.size() != 1)
         {
-            n = nums.size();
-            // vector<int>temp = nums;
-            nums.clear();
-            for(int i=0;i<n;i+=2)
+            vector<int> currvect;
+            bool flag = true;
+            for (int i = 0; i < nums.size() - 1; i++)
             {
-                if(flag) nums.push_back(min(nums[i], nums[i+1]));
-                else nums.push_back(max(nums[i], nums[i+1]));
-                flag = !flag;
+                if (flag)
+                {
+                    currvect.push_back(min(nums[i], nums[i + 1]));
+                    flag = false;
+                }
+                else
+                {
+                    currvect.push_back(max(nums[i], nums[i + 1]));
+                    flag = true;
+                }
+                i++;
             }
+            nums = currvect;
         }
-        return min(nums[0], nums[1]);
+        return nums[0];
     }
 };
 
 int main()
 {
-    cout << "Hello, word!" << endl;
+    Solution sol;
+    vector<int> x {1,3,5,2,4,8,2,2};
+    cout << "Min is : "<< sol.minMaxGame(x) << endl;
     return 0;
 }
