@@ -12,6 +12,10 @@ public:
         for(int i = 0; i < n; i++)
         {
             sum += chalk[i];
+            if(sum > k)
+            {
+                break;
+            }
         }
         while(sum < k)
         {
