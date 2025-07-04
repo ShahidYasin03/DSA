@@ -31,5 +31,6 @@ int main() {
     int k2 = 10;
     cout << "Test Case 2 (k = " << k2 << "): " << sol.kthCharacter(k2) << endl;
 
+
     return 0;
 }
