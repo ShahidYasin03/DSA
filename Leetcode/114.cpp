@@ -34,3 +34,18 @@ public:
         root->right = dummy->right->right; 
     }
 };
+
+
+class Solution {
+public:
+    TreeNode* NR = nullptr;
+    void flatten(TreeNode* root) {
+       if(!root) return;
+       flatten(root->right);
+       flatten(root->left);
+
+       root->left = nullptr;
+       root->right = NR;
+       NR = root;
+    }
+};
