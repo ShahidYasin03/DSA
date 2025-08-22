@@ -22,14 +22,19 @@ public:
                 }
             }
         }
-        
         if (maxi == -1) return 0; 
-        
-        int height = maxi - mini + 1;
-        int width  = maxj - minj + 1;
-        return height * width;
+        return (maxi - mini + 1)* (maxj - minj + 1);
     }
 };
+
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cout.tie(nullptr);
+    cin.tie(nullptr);
+    return 0;
+}();
+
+
 
 
 int main() {
