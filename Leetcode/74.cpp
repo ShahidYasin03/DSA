@@ -7,18 +7,26 @@ class Solution
 public:
     bool searchMatrix(vector<vector<int>> &matrix, int target)
     {
-        // int i = 0;
-        // int j = 0;
-        int n = matrix.size();
-        int m = matrix[0].size();
-        for (int i = 0; i < n; i++)
+        int n = matrix.size() - 1;
+        int m = matrix[0].size() - 1;
+        int low = 0;
+        int high = n * m - 1;
+        while (low <= high)
         {
-            for (int j = 0; j < m; j++)
+            int mid = low + (high - low) / 2;
+            int val = matrix[mid / m][mid % m];
+
+            if (val == target)
             {
-                if (matrix[i][j] == target)
-                {
-                    return true;
-                }
+                return true;
+            }
+            else if (val < target)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
             }
         }
         return false;
