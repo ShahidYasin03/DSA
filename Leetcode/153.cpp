@@ -2,19 +2,34 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int findMin(vector<int>& nums) {
-        int x = 5001;
-        for(int i = 0 ; i < nums.size(); i++){
-            x = min(x, nums[i]);
+    int findMin(vector<int> &nums)
+    {
+        int l = 0;
+        int r = nums.size() - 1;
+        int ans = 5001;
+        while (l <= r)
+        {
+            int mid = l + (r - l) / 2;
+            if (nums[l] <= nums[mid])
+            {
+                ans = min(ans, nums[l]);
+                l = mid + 1;
+            }
+            else
+            {
+                r = mid - 1;
+                ans = min(ans, nums[mid]);
+            }
         }
-        return x;
+        return ans;
     }
 };
 
-
-int main() {
+int main()
+{
     Solution sol;
     vector<int> test1 = {3, 4, 5, 1, 2};
     vector<int> test2 = {11, 13, 15, 17};
