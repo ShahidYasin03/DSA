@@ -1,28 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <numeric>
 using namespace std;
 
 class Solution
 {
+private:
+    int gcd(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
 public:
     vector<string> simplifiedFractions(int n)
     {
-        int num;
-        int den;
         vector<string> v;
-        for (int i = 1; i < n; i++)
+        for (int num = 1; num < n; num++)
         {
-            for (int j = i; j <= n; j++)
+            for (int den = num + 1; den <= n; den++)
             {
-                num = i;
-                den = j;
-                string a = "";
-                if (gcd(num, den) == 1 && num != den && den != 1)
+                if (gcd(num, den) == 1)
                 {
-                    a += to_string(num) + '/' + to_string(den);
-                    v.push_back(a);
+                    v.push_back(to_string(num) + "/" + to_string(den));
                 }
             }
         }
@@ -33,12 +38,11 @@ public:
 int main()
 {
     Solution sol;
-    int n = 5; // Example input
+    int n = 4;
     vector<string> result = sol.simplifiedFractions(n);
-    for (const auto &frac : result)
-    {
-        cout << frac << " ";
-    }
+
+    cout << "Simplified fractions for n = " << n << ":\n";
+    for (auto &f : result)
+        cout << f << " ";
     cout << endl;
-    return 0;
 }
