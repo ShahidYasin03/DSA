@@ -9,16 +9,19 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    void preOrder(int& count, TreeNode* root)
+    void preOrder(int &count, TreeNode *root)
     {
-        if(!root) return;
+        if (!root)
+            return;
         count++;
         preOrder(count, root->left);
         preOrder(count, root->right);
     }
-    int countNodes(TreeNode* root) {
+    int countNodes(TreeNode *root)
+    {
         int ans = 0;
         preOrder(ans, root);
         return ans;
