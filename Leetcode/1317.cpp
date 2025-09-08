@@ -6,34 +6,29 @@ using namespace std;
 class Solution
 {
 public:
-    bool zeroCheck(string s)
+    bool zeroCheck(int n)
     {
-        for (char i : s)
+        while (n)
         {
-            if (i == '0')
+            if (n % 10 == 0)
+            {
                 return false;
+            }
+            n /= 10;
         }
         return true;
     }
     vector<int> getNoZeroIntegers(int n)
     {
-        int i = 1, j = n - 1;
-        while (i <= j)
+        for (int i = 1; i < n; i++)
         {
-            if (i + j == n && (zeroCheck(to_string(i)) && zeroCheck(to_string(j))))
+            int j = n - i;
+            if (zeroCheck(i) && zeroCheck(j))
             {
                 return {i, j};
             }
-            else if (i + j < n)
-            {
-                i++;
-            }
-            else
-            {
-                j--;
-            }
         }
-        return {-1, -1};
+        return {};
     }
 };
 
