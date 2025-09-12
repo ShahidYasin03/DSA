@@ -4,52 +4,86 @@
 #include <cctype>
 using namespace std;
 
+// -----------------------------Mine-----------------------------------
+
+// class Solution
+// {
+// public:
+//     bool isVowel(char ch)
+//     {
+//         ch = std::tolower(ch);
+//         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+//         {
+//             return true;
+//         }
+//         else
+//         {
+//             return false;
+//         }
+//     }
+//     string sortVowels(string s)
+//     {
+//         vector<char> full;
+//         vector<char> vowel;
+//         for (char i : s)
+//         {
+//             if (isVowel(i))
+//             {
+//                 vowel.push_back(i);
+//                 full.push_back('+');
+//             }
+//             else
+//             {
+//                 full.push_back(i);
+//             }
+//         }
+//         sort(vowel.begin(), vowel.end());
+//         string ans = "";
+//         int idx = 0;
+//         for (int i = 0; i < full.size(); i++)
+//         {
+//             if (full[i] == '+')
+//             {
+//                 ans += vowel[idx++];
+//             }
+//             else
+//             {
+//                 ans += full[i];
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
+// ---------------------------------------GPT--------------------------------------
+
 class Solution
 {
 public:
     bool isVowel(char ch)
     {
-        ch = std::tolower(ch);
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        ch = tolower(ch);
+        return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
     }
+
     string sortVowels(string s)
     {
-        vector<char> full;
         vector<char> vowel;
-        for (char i : s)
+        for (char c : s)
         {
-            if (isVowel(i))
-            {
-                vowel.push_back(i);
-                full.push_back('+');
-            }
-            else
-            {
-                full.push_back(i);
-            }
+            if (isVowel(c))
+                vowel.push_back(c);
         }
         sort(vowel.begin(), vowel.end());
-        string ans = "";
         int idx = 0;
-        for (int i = 0; i < full.size(); i++)
+        for (char &c : s)
         {
-            if (full[i] == '+')
+            if (isVowel(c))
             {
-                ans += vowel[idx++];
-            }
-            else
-            {
-                ans += full[i];
+                c = vowel[idx++];
             }
         }
-        return ans;
+        return s;
     }
 };
 
