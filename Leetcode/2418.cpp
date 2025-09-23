@@ -2,48 +2,49 @@
 #include <vector>
 #include <string>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
-// class Solution {
-// public:
-//     static vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
-//         const int n = names.size();
-//         vector<pair<int, string>> hn(n);
-//         for (int i = 0; i < n; i++)
-//             hn[i] = {heights[i], names[i]};
-
-//         sort(hn.begin(), hn.end(), greater<>());
-
-//         for (int i = 0; i < n; i++)
-//             names[i] = hn[i].second;
-
-//         return names;
-//     }
-// };
-
-class Solution
-{
+class Solution {
 public:
-    vector<string> sortPeople(vector<string> &names, vector<int> &heights)
-    {
-        priority_queue<pair<int, string>> pq;
-        int n = names.size();
+    static vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        const int n = names.size();
+        vector<pair<int, string>> hn(n);
         for (int i = 0; i < n; i++)
-        {
-            pq.push({heights[i], names[i]});
-        }
+            hn[i] = {heights[i], names[i]};
 
-        vector<string> ans;
-        while (!pq.empty())
-        {
-            auto temp = pq.top();
-            pq.pop();
-            ans.push_back(temp.second);
-        }
-        return ans;
+        sort(hn.begin(), hn.end(), greater<>());
+
+        for (int i = 0; i < n; i++)
+            names[i] = hn[i].second;
+
+        return names;
     }
 };
+
+// class Solution
+// {
+// public:
+//     vector<string> sortPeople(vector<string> &names, vector<int> &heights)
+//     {
+//         priority_queue<pair<int, string>> pq;
+//         int n = names.size();
+//         for (int i = 0; i < n; i++)
+//         {
+//             pq.push({heights[i], names[i]});
+//         }
+
+//         vector<string> ans;
+//         while (!pq.empty())
+//         {
+//             auto temp = pq.top();
+//             pq.pop();
+//             ans.push_back(temp.second);
+//         }
+//         return ans;
+//     }
+// };
 
 auto init = []()
 {
