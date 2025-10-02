@@ -9,10 +9,9 @@ int numWaterBottles(int bottles, int ex)
 
     while (empty >= ex)
     {
-        int ex1 = empty / ex;
-        total += ex1;
         int extra = empty % ex;
-        empty = ex1 + extra;
+        total += empty / ex;
+        empty = empty / ex + extra;
     }
 
     return total;
