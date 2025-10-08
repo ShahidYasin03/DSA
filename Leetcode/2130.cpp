@@ -13,19 +13,29 @@ class Solution
 public:
     int pairSum(ListNode *head)
     {
-        vector<int> x;
-        ListNode *temp = head;
-        while (temp)
-        {
-            x.push_back(temp->val);
-            temp = temp->next;
-        }
-        int i = 0;
-        int j = x.size() - 1;
+        ListNode *fast = head;
+        ListNode *slow = fast;
         int sum = 0;
-        while (i < j)
+        while(fast && fast->next)
         {
-            sum = max(sum, (x[i++] + x[j--]));
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        ListNode* prev, *nextNode = nullptr;
+        while(slow)
+        {
+            nextNode = slow->next;
+            slow->next = prev;
+            prev = slow;
+            slow = nextNode;
+        }
+
+        while(prev)
+        {
+            sum = max(sum, (head->val + prev->val));
+            prev = prev->next;
+            head = head->next;
         }
         return sum;
     }
