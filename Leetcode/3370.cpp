@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+using namespace std;
 
 class Solution
 {
@@ -20,7 +21,7 @@ public:
 int main()
 {
     Solution s;
-    std::cout << s.smallestNumber(7) << std::endl; // Expected: 7
-    std::cout << s.smallestNumber(9) << std::endl; // Expected: 15
+    cout << s.smallestNumber(7) << endl;
+    cout << s.smallestNumber(9) << endl;
     return 0;
 }
