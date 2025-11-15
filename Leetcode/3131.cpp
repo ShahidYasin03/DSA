@@ -12,9 +12,6 @@ public:
         {
             if (num1[i] < min1)
                 min1 = num1[i];
-        }
-        for (int i = 0; i < num2.size(); i++)
-        {
             if (num2[i] < min2)
                 min2 = num2[i];
         }
