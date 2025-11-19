@@ -3,48 +3,24 @@
 #include <algorithm>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int maximumSwap(int num)
-    {
-        vector<int> temp;
-        int tempNum = num;
-        while (num)
-        {
-            temp.push_back(num % 10);
-            num /= 10;
+    int maximumSwap(int num) {
+        string s = to_string(num);
+        vector<int> last(10, 0);
+        for (int i = 0; i < s.size(); i++) {
+            last[s[i] - '0'] = i;
         }
-        reverse(temp.begin(), temp.end());
-        int n = temp.size();
-        vector<int> last(10, -1);
-        for (int i = 0; i < n; i++)
-        {
-            last[temp[i]] = i;
-        }
-        for (int i = 0; i < n; i++)
-        {
-            int curr = temp[i];
-            for (int d = 9; d > curr; d--)
-            {
-                if (last[d] > i)
-                {
-                    int j = last[d];
-                    int t = temp[i];
-                    temp[i] = temp[j];
-                    temp[j] = t;
-
-                    int ans = 0;
-                    for (int k = 0; k < n; k++)
-                    {
-                        ans = ans * 10 + temp[k];
-                    }
-                    return ans;
+        for (int i = 0; i < s.size(); i++) {
+            int curr = s[i] - '0';
+            for (int d = 9; d > curr; d--) {
+                if (last[d] > i) {
+                    swap(s[i], s[last[d]]);
+                    return stoi(s);
                 }
             }
         }
-
-        return tempNum;
+        return num;
     }
 };
 
