@@ -46,18 +46,10 @@ int main()
     Solution sol;
 
     // Test case 1
-    // cout << "n = 1: " << sol.countAndSay(1) << endl;
+    cout << "n = 4: " << sol.countAndSay(4) << endl;
 
     // Test case 2
     cout << "n = 5: " << sol.countAndSay(5) << endl;
-
-    // vector<vector<int>> temp = {
-    //     {0, 1}, {0, 2}, {0, 3}, {0, 4}, {0, 5}, {0, 6}, {0, 7}, {0, 8}, {0, 9}};
-
-    // for (int i = 0; i < 9; i++)
-    // {
-    //     cout << "{" << temp[i][0] << ", " << temp[i][1] << "} ";
-    // }
 
     return 0;
 }
