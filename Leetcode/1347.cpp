@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 class Solution
@@ -9,8 +8,6 @@ class Solution
 public:
     int minSteps(string s, string t)
     {
-        sort(s.begin(), s.end());
-        sort(t.begin(), t.end());
         int count = 0;
         vector<int> vec1(26, 0);
         vector<int> vec2(26, 0);
