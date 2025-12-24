@@ -3,6 +3,29 @@
 #include <algorithm>
 using namespace std;
 
+// Python
+
+// class Solution(object):
+//     def minimumBoxes(self, apple, capacity):
+//         """
+//         :type apple: List[int]
+//         :type capacity: List[int]
+//         :rtype: int
+//         """
+//         apple.sort(reverse=True)
+//         capacity.sort(reverse=True)
+//         i, j, cap = 0, 0, 0
+
+//         while i < len(apple):
+//             if cap < apple[i]:
+//                 cap += capacity[j]
+//                 j += 1
+//             else:
+//                 cap -= apple[i]
+//                 i += 1
+//         return j
+
+// C++
 class Solution
 {
 public:
