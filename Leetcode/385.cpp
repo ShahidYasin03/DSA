@@ -1,23 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// class Solution
+// {
+// public:
+//     vector<int> lexicalOrder(int n)
+//     {
+//         vector<string> nums(n);
+//         for (int i = 0; i < n; i++)
+//         {
+//             nums[i] = to_string(i + 1);
+//         }
+//         sort(nums.begin(), nums.end());
+//         vector<int> ans;
+//         for (int i = 0; i < n; i++)
+//         {
+//             ans.push_back(stoi(nums[i]));
+//         }
+//         return ans;
+//     }
+// };
+
 class Solution
 {
 public:
     vector<int> lexicalOrder(int n)
     {
-        vector<string> nums(n);
+        vector<int> nums;
+        int currentNum = 1;
         for (int i = 0; i < n; i++)
         {
-            nums[i] = to_string(i + 1);
+            nums.push_back(currentNum);
+            if (currentNum * 10 <= n)
+            {
+                currentNum *= 10;
+            }
+            else
+            {
+                while (currentNum % 10 == 9 || currentNum + 1 > n)
+                {
+                    currentNum /= 10;
+                }
+                currentNum++;
+            }
         }
-        sort(nums.begin(), nums.end());
-        vector<int> ans;
-        for (int i = 0; i < n; i++)
-        {
-            ans.push_back(stoi(nums[i]));
-        }
-        return ans;
+        return nums;
     }
 };
 
