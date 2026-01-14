@@ -10,20 +10,17 @@ public:
     int minSubArrayLen(int target, vector<int> &nums)
     {
         int ans = INT_MAX;
+        int res = 0;
         int n = nums.size();
-        for (int i = 0; i < n; i++)
+        int l = 0;
+        for (int r = 0; r < n; r++)
         {
-            int len = 0;
-            int sum = 0;
-            for (int j = i; j < n; j++)
+            res += nums[r];
+            while (res >= target)
             {
-                sum += nums[j];
-                if (sum >= target)
-                {
-                    len = j - i + 1;
-                    ans = min(ans, len);
-                    break;
-                }
+                ans = min(r - l + 1, ans);
+                res -= nums[l];
+                l++;
             }
         }
         if (ans > n)
