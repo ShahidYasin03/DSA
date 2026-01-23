@@ -17,13 +17,6 @@ public:
         vector<int> ans;
         for (int i = 0; i < q.size(); i++)
         {
-            // x = 0;
-            // for(int j = q[i][0]; j <= q[i][1]; j++)
-            // {
-            //     x = x ^ arr[j];
-            // }
-            // ans.push_back(x);
-
             if (q[i][0] == 0)
             {
                 ans.push_back(prefixXor[q[i][1]]);
