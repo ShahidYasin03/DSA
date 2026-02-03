@@ -7,33 +7,25 @@ class Solution
 public:
     bool isTrionic(vector<int> &nums)
     {
-        int i = 0, count = 0, n = nums.size();
+        int i = 0, n = nums.size();
+        bool one = false, two = false, three = false;
         while (i < n - 1 && nums[i] < nums[i + 1])
         {
             i++;
-            if (count == 0)
-            {
-                count = 1;
-            }
+            one = true;
         }
         while (i < n - 1 && nums[i] > nums[i + 1])
         {
             i++;
-            if (count == 1)
-            {
-                count = 2;
-            }
+            two = true;
         }
         while (i < n - 1 && nums[i] < nums[i + 1])
         {
             i++;
-            if (count == 2)
-            {
-                count = 3;
-            }
+            three = true;
         }
 
-        return count == 3;
+        return one && two && three && i == n - 1;
     }
 };
 
