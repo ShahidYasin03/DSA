@@ -7,19 +7,33 @@ class Solution
 public:
     bool isTrionic(vector<int> &nums)
     {
-        bool one = false, two = false, three = false;
-        for (int i = 0; i < nums.size() - 1; i++)
+        int i = 0, count = 0, n = nums.size();
+        while (i < n - 1 && nums[i] < nums[i + 1])
         {
-            if (nums[i] > nums[i + 1])
+            i++;
+            if (count == 0)
             {
-                one = true;
-            }
-            else if (nums[i] < nums[i + 1])
-            {
-                one = false;
+                count = 1;
             }
         }
-        return one;
+        while (i < n - 1 && nums[i] > nums[i + 1])
+        {
+            i++;
+            if (count == 1)
+            {
+                count = 2;
+            }
+        }
+        while (i < n - 1 && nums[i] < nums[i + 1])
+        {
+            i++;
+            if (count == 2)
+            {
+                count = 3;
+            }
+        }
+
+        return count == 3;
     }
 };
 
@@ -28,7 +42,7 @@ int main()
     Solution sol;
 
     // Test case 1
-    vector<int> nums1 = {1,3,5,4,2,6};
+    vector<int> nums1 = {1, 3, 5, 4, 2, 6};
     cout << "Test 1: " << (sol.isTrionic(nums1) ? "true" : "false") << endl;
 
     // Test case 2
