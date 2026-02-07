@@ -1,35 +1,34 @@
 #include <iostream>
 #include <string>
-#include <algorithm> // for std::min
+#include <algorithm>
+using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int minimumDeletions(std::string s) {
-        int n = s.length();
-        int countMin = n;
-        int countRight_a = 0;
-
-        // Count the total number of 'a's in the string
-        for(int i = 0; i < n; i++) {
-            char curr = s[i];
-            if(curr == 'a') countRight_a++;
+    int minimumDeletions(string s)
+    {
+        int a = 0, mn = s.length();
+        for (char i : s)
+        {
+            if (i == 'a')
+                a++;
         }
-
-        int countLeft_b = 0;
-        for(int i = 0; i < n; i++) {
-            char curr = s[i];
-            if(curr == 'a') countRight_a--;
-
-            countMin = std::min(countMin, countRight_a + countLeft_b);
-
-            if(curr == 'b') countLeft_b++;
+        int b = 0;
+        for (char i : s)
+        {
+            if (i == 'a')
+                a--;
+            mn = min(mn, a + b);
+            if (i == 'b')
+                b++;
         }
-
-        return countMin;
+        return mn;
     }
 };
 
-int main() {
+int main()
+{
     Solution sol;
 
     // Test cases
@@ -40,7 +39,7 @@ int main() {
     std::cout << "Minimum deletions for " << test2 << ": " << sol.minimumDeletions(test2) << std::endl;
 
     std::string test3 = "ababab";
-    std::cout << "Minimum deletions for " << test3 << ": " << sol.minimumDeletions(test3) << std::endl; 
+    std::cout << "Minimum deletions for " << test3 << ": " << sol.minimumDeletions(test3) << std::endl;
 
     std::string test4 = "bbb";
     std::cout << "Minimum deletions for " << test4 << ": " << sol.minimumDeletions(test4) << std::endl;
