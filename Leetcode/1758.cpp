@@ -8,24 +8,17 @@ class Solution
 public:
     int minOperations(string s)
     {
-        char flag = '1';
         int count1 = 0, count2 = 0;
-        for (char c : s)
+        for (int i = 0; i < s.length(); i++)
         {
-            if (c != flag)
+            if (s[i] != (i % 2 ? '1' : '0'))
             {
                 count1++;
             }
-            flag = (flag == '1') ? '0' : '1';
-        }
-        flag = '0';
-        for (char c : s)
-        {
-            if (c != flag)
+            if (s[i] != (i % 2 ? '0' : '1'))
             {
                 count2++;
             }
-            flag = (flag == '1') ? '0' : '1';
         }
         return min(count1, count2);
     }
