@@ -9,22 +9,11 @@ public:
     bool checkOnesSegment(string s)
     {
         bool flag = false;
-        vector<int> temp(s.length(), 0);
-        int idx = 0;
-        for (int i = 0; i < s.length(); i++)
+        if (s[0] == '1')
+            flag = true;
+        for (int i = 0; i < s.length() - 1; i++)
         {
-            if (s[i] == '1')
-            {
-                temp[idx]++;
-            }
-            else
-            {
-                idx++;
-            }
-        }
-        for (int i = 0; i < temp.size(); i++)
-        {
-            if (temp[i] > 0)
+            if (s[i] == '0' && s[i + 1] == '1')
             {
                 if (!flag)
                 {
