@@ -73,3 +73,29 @@ more familiar.
 I stopped coding for a while because I did not have internet access. I also could
 have continued learning binary trees, but I did not. I do not know why, but I want
 to start again and keep going.
+
+### 2025
+
+#### Throughout the year
+
+I kept coming back to DSA whenever I had the time and energy. I did not follow a
+perfect routine, but I continued learning, solving problems, and adding more code
+to this repository. Some breaks happened, but I did not completely give up.
+
+### March 2026
+
+#### Starting my FYP
+
+By March, I started working on my Final Year Project. My focus moved away from
+regular DSA practice so I could give my FYP the time it needed. This became another
+long break from the grind, but it was for something important that I needed to
+finish.
+
+### September 2026
+
+#### Back to the grind
+
+I am finally free from my FYP, so I am making a comeback. It is time to start
+practicing DSA again and get back into the grind. I may have forgotten some things,
+but I have started before and I can start again. This time I want to stay more
+consistent and keep moving forward.
