@@ -42,7 +42,34 @@ Compiled executables and temporary VS Code runner files are excluded from Git.
 
 ## Learning Journal
 
-- **Friday, 7/5/2024:** I was too tired to work because the power was out most of the day. I cloned the repository in VS Code.
-- **Sunday, 7/14/2024:** I solved LeetCode 726 after following a tutorial and working through the problem.
-- **Monday, 7/15/2024:** I started learning binary trees. I had some basic knowledge but had not implemented or used them before.
-- **Tuesday, 8/13/2024:** I stopped coding for a while because I did not have internet access. I still want to continue learning binary trees.
+I am not writing here every day. I want to record an update whenever I make
+meaningful progress or learn something important, so the timeline stays honest and
+consistent.
+
+### July 2024
+
+#### July 5
+
+I am trying to learn DSA after my exams. It feels like I have forgotten everything,
+but I will keep trying. Today I did not have much energy because the power was out
+most of the day. I cloned the repository in VS Code.
+
+#### July 14
+
+Today I tried to solve a hard LeetCode problem. I thought I could solve it myself,
+but it was very difficult, so I followed a tutorial to understand it properly. I
+solved LeetCode 726 after following the solution.
+
+#### July 15
+
+Today I started learning binary trees. I have a little idea about them, but I have
+never implemented or used them before. I want to keep practicing until they become
+more familiar.
+
+### August 2024
+
+#### August 13
+
+I stopped coding for a while because I did not have internet access. I also could
+have continued learning binary trees, but I did not. I do not know why, but I want
+to start again and keep going.
